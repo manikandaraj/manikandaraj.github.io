@@ -1,7 +1,22 @@
-title: My Blog
-# Set the theme to 'hacker' from GitHub Pages Themes
-theme: jekyll-theme-hacker
+title: "Manikandaraj Srinivasa"
+description: "My personal blog about technology, programming, and life experiences."
+baseurl: ""
+url: "https://manikandaraj.github.io"
 
-# Optional: Add other configuration options below
-# description: A blog powered by Jekyll and the Hacker theme
-# author: Your Name
+# Theme
+theme: Hacker  # or any other supported theme
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Default settings for blog posts
+defaults:
+  - scope:
+      path: ""
+      type: "blog"
+    values:
+      layout: "post"
