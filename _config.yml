@@ -1,7 +1,7 @@
-title: "Manikandaraj Srinivasa"
+title: "Manikandaraj Srinivasan"
 description: "My personal blog about technology, programming, and life experiences."
 baseurl: ""
-url: "https://manikandaraj.github.io"
+#url: "https://manikandaraj.github.io"
 
 # Theme
 remote_theme: pages-themes/hacker@v0.2.0
@@ -14,10 +14,14 @@ plugins:
   - jekyll-sitemap
   - jekyll-remote-theme
 
-# Default settings for blog posts
+# Hide GitHub button
+github:
+  is_project_page: false
+
+# Default settings for posts
 defaults:
   - scope:
       path: ""
-      type: "blog"
+      type: "posts"
     values:
       layout: "post"
