@@ -9,6 +9,17 @@ remote_theme: pages-themes/hacker@v0.2.0
 # Build settings
 markdown: kramdown
 highlighter: rouge
+
+# Kramdown settings for better table support
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 plugins:
   - jekyll-feed
   - jekyll-sitemap

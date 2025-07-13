@@ -1,0 +1,61 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom table styling for better readability */
+table {
+  border-collapse: collapse;
+  margin: 20px 0;
+  width: 100%;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+}
+
+table th,
+table td {
+  border: 1px solid #30363d;
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+table th {
+  background-color: #21262d;
+  font-weight: bold;
+  color: #f0f6fc;
+}
+
+table td {
+  background-color: #0d1117;
+  color: #e6edf3;
+}
+
+table tr:nth-child(even) td {
+  background-color: #161b22;
+}
+
+table tr:hover td {
+  background-color: #21262d;
+}
+
+/* Style for code within tables */
+table td code,
+table th code {
+  background-color: #21262d;
+  color: #79c0ff;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Style for bullet points in tables */
+table td ul,
+table td ol {
+  margin: 0;
+  padding-left: 16px;
+}
+
+table td li {
+  margin: 2px 0;
+}
