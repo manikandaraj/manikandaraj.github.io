@@ -4,7 +4,7 @@ baseurl: ""
 url: "https://manikandaraj.github.io"
 
 # Theme
-theme: Hacker  # or any other supported theme
+remote_theme: pages-themes/hacker@v0.2.0
 
 # Build settings
 markdown: kramdown
@@ -12,6 +12,7 @@ highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-remote-theme
 
 # Default settings for blog posts
 defaults:
