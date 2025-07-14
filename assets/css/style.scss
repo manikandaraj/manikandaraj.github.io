@@ -3,6 +3,55 @@
 
 @import "{{ site.theme }}";
 
+/* General improvements for better readability */
+body {
+  line-height: 1.6;
+}
+
+/* Better post metadata styling */
+.post-meta {
+  color: #586069;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+
+/* Better navigation styling */
+nav {
+  margin-bottom: 2em;
+  padding: 1em 0;
+  border-bottom: 1px solid #30363d;
+}
+
+nav a {
+  margin-right: 1em;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+nav a:hover {
+  background-color: #21262d;
+}
+
+/* Better code block styling */
+pre {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+/* Better blockquote styling */
+blockquote {
+  border-left: 4px solid #30363d;
+  margin: 1em 0;
+  padding-left: 1em;
+  color: #8b949e;
+}
+
 /* Custom table styling for better readability */
 table {
   border-collapse: collapse;

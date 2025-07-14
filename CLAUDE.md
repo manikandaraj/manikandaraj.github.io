@@ -10,14 +10,6 @@ This is a Jekyll-based personal blog hosted on GitHub Pages. The site uses the H
 
 Since this site uses GitHub Pages, all building happens automatically on GitHub's servers. Local development is not required, but if needed:
 
-```bash
-# Install dependencies (if working locally)
-bundle install
-
-# Serve locally (if working locally) 
-bundle exec jekyll serve
-```
-
 ## Site Structure
 
 - **Posts**: Must be placed in `_posts/` directory with naming format `YYYY-MM-DD-title.md`
