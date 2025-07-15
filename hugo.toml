@@ -1,0 +1,61 @@
+baseURL = "https://manikandaraj.github.io/myblog"
+languageCode = "en-us"
+title = "Manikandaraj Srinivasan - Blog"
+theme = "mango"
+
+[caches]
+  [caches.images]
+    dir = ":cacheDir/images"
+
+[params]
+  author.name = "Manikandaraj Srinivasan"
+  author.email = "manikandaraj@example.com"
+  googleAnalyticsID = ""
+  iframeURL = "https://example.com/ads"
+  fontFamily = "Inter, sans-serif"
+  themeMode = "dark"
+  footerCopyright = "© 2021–2024 Manikandaraj Srinivasan"
+
+  [params.social]
+    github = "https://github.com/manikandaraj"
+    linkedin = "https://linkedin.com/in/manikandaraj"
+    twitter = "https://twitter.com/manikandaraj"
+    stackoverflow = "https://stackoverflow.com/users/manikandaraj"
+    youtube = "https://youtube.com/@manikandaraj"
+    instagram = "https://instagram.com/manikandaraj"
+    email = "mailto:manikandaraj@example.com"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 3
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 4
+
+[[menu.main]]
+  name = "Resume"
+  url = "/resume/"
+  weight = 5
+
+[[menu.main]]
+  name = "My Projects"
+  url = "/projects/"
+  weight = 6
+
+[[menu.main]]
+  name = "Referral Links"
+  url = "/referrals/"
+  weight = 7

@@ -1,0 +1,10 @@
+name = "Mango"
+description = "A dark-themed, responsive Hugo blog theme"
+homepage = "https://github.com/manikandaraj/mango-theme"
+tags = ["blog", "dark", "responsive", "sidebar"]
+features = ["responsive", "dark-mode", "social-links", "toc"]
+min_version = "0.148.0"
+
+[author]
+  name = "Manikandaraj Srinivasan"
+  homepage = "https://manikandaraj.github.io"

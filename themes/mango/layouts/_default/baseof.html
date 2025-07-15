@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    {{ partial "head/head.html" . }}
+</head>
+<body>
+    <div class="container">
+        {{ partial "header.html" . }}
+        
+        <div class="main-wrapper">
+            <aside class="left-sidebar">
+                {{ range .Site.Params.social }}
+                    {{ if . }}
+                        <div class="social-item">
+                            <a href="{{ . }}" target="_blank" rel="noopener">
+                                {{ $icon := index (split (index (split . "/") 2) ".") 0 }}
+                                {{ if eq $icon "github" }}
+                                    <i class="fab fa-github"></i>
+                                {{ else if eq $icon "linkedin" }}
+                                    <i class="fab fa-linkedin"></i>
+                                {{ else if eq $icon "twitter" }}
+                                    <i class="fab fa-twitter"></i>
+                                {{ else if eq $icon "stackoverflow" }}
+                                    <i class="fab fa-stack-overflow"></i>
+                                {{ else if eq $icon "youtube" }}
+                                    <i class="fab fa-youtube"></i>
+                                {{ else if eq $icon "instagram" }}
+                                    <i class="fab fa-instagram"></i>
+                                {{ else if hasPrefix . "mailto:" }}
+                                    <i class="fas fa-envelope"></i>
+                                {{ else }}
+                                    <i class="fas fa-link"></i>
+                                {{ end }}
+                            </a>
+                        </div>
+                    {{ end }}
+                {{ end }}
+            </aside>
+
+            <main class="content">
+                {{ if and .TableOfContents (gt (len .TableOfContents) 50) }}
+                    <div class="toc">
+                        <h3>Table of Contents</h3>
+                        {{ .TableOfContents }}
+                    </div>
+                {{ end }}
+                {{ block "main" . }}{{ end }}
+            </main>
+
+            <aside class="right-sidebar">
+                {{ if .Site.Params.iframeURL }}
+                    <iframe src="{{ .Site.Params.iframeURL }}" frameborder="0" width="100%" height="100%"></iframe>
+                {{ else if .Site.Params.ads.iframe }}
+                    <iframe src="{{ .Site.Params.ads.iframe }}" frameborder="0" width="100%" height="100%"></iframe>
+                {{ end }}
+            </aside>
+        </div>
+
+        {{ partial "footer.html" . }}
+    </div>
+
+    {{ partial "head/js.html" . }}
+</body>
+</html>
