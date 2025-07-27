@@ -1,10 +1,14 @@
+
 name = "Mango"
-description = "A dark-themed, responsive Hugo blog theme"
-homepage = "https://github.com/manikandaraj/mango-theme"
-tags = ["blog", "dark", "responsive", "sidebar"]
-features = ["responsive", "dark-mode", "social-links", "toc"]
-min_version = "0.148.0"
+license = "MIT"
+licenselink = "https://github.com/manikandaraj/mango/blob/main/LICENSE"
+description = "A clean, fast, and responsive Hugo theme for blogging with dark/light theme support and mobile-friendly navigation"
+homepage = "https://github.com/manikandaraj/mango"
+demosite = "https://manikandaraj.com"
+tags = ["blog", "responsive", "clean", "minimal", "dark-mode", "light-mode", "mobile-friendly", "fast", "seo", "syntax-highlighting"]
+features = ["responsive", "dark-mode", "mobile-navigation", "syntax-highlighting", "social-links", "seo-optimized", "fast-loading"]
+min_version = "0.112.0"
 
 [author]
   name = "Manikandaraj Srinivasan"
-  homepage = "https://manikandaraj.github.io"
+  homepage = "https://manikandaraj.com"

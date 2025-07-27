@@ -1,8 +1,13 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-draft: true
-summary: ""
-tags: []
-categories: []
+title = '{{ replace .File.ContentBaseName `-` ` ` | title }}'
+description = ""
+summary = ""
+date = '{{ .Date }}'
+lastmod = '{{ .Date }}'
+keywords = []
+tags = []
+categories = []
+draft = true
+[params]
+    author = 'Manikandaraj Srinivasan'
 ---

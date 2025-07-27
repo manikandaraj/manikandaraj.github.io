@@ -1,49 +1,24 @@
+
 {{ define "main" }}
-<article class="single-post">
-    <header class="post-header">
-        <h1 class="post-title">{{ .Title }}</h1>
-        <div class="post-meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-            {{ if .Params.tags }}
-                <div class="tags">
-                    {{ range .Params.tags }}
-                        <a href="/tags/{{ . | urlize }}/" class="tag">#{{ . }}</a>
-                    {{ end }}
-                </div>
-            {{ end }}
-            {{ if .Params.categories }}
-                <div class="categories">
-                    {{ range .Params.categories }}
-                        <a href="/categories/{{ . | urlize }}/" class="category">{{ . }}</a>
-                    {{ end }}
-                </div>
-            {{ end }}
-        </div>
-    </header>
+<div class="content-header">
+    <h1 style="color: var(--accent-color);">{{ .Title }}</h1>
+</div>
+
+<article class="blog-post-content">
+    <div class="blog-post-meta">{{ .Site.Params.blog.published_text | default "Published on" }} {{ .Date.Format (.Site.Params.dateFormatToUse | default "January 2, 2006") }} | {{ .ReadingTime }} {{ .Site.Params.blog.reading_time_text | default "min read" }}{{ if .Params.tags }} | {{ .Site.Params.blog.tags_text | default "Tags" }}: {{ delimit .Params.tags ", " }}{{ end }}</div>
     
-    <div class="post-content">
+    <!-- Auto-generated Table of Contents -->
+    {{ $showTOC := .Site.Params.blog.auto_toc | default true }}
+    {{ if .Params.toc }}{{ $showTOC = .Params.toc }}{{ end }}
+    {{ if and $showTOC .TableOfContents }}
+    <aside class="auto-toc">
+        <h4>{{ .Site.Params.blog.toc_title | default "Table of Contents" }}</h4>
+        {{ .TableOfContents }}
+    </aside>
+    {{ end }}
+    
+    <div class="post-content{{ if .Site.Params.blog.hide_duplicate_title | default true }} hide-first-h1{{ end }}">
         {{ .Content }}
     </div>
-    
-    {{ if or .PrevInSection .NextInSection }}
-        <nav class="post-navigation">
-            {{ if .PrevInSection }}
-                <div class="nav-prev">
-                    <a href="{{ .PrevInSection.RelPermalink }}" rel="prev">
-                        <span class="nav-label">← Previous</span>
-                        <span class="nav-title">{{ .PrevInSection.Title }}</span>
-                    </a>
-                </div>
-            {{ end }}
-            {{ if .NextInSection }}
-                <div class="nav-next">
-                    <a href="{{ .NextInSection.RelPermalink }}" rel="next">
-                        <span class="nav-label">Next →</span>
-                        <span class="nav-title">{{ .NextInSection.Title }}</span>
-                    </a>
-                </div>
-            {{ end }}
-        </nav>
-    {{ end }}
 </article>
 {{ end }}

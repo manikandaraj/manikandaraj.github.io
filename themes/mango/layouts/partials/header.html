@@ -1,47 +1,12 @@
-<header class="header">
-    <div class="header-content">
-        <h1 class="site-title">
-            <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-        </h1>
-        
-        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        
-        <nav class="desktop-nav">
-            {{ partial "menu.html" . }}
-        </nav>
-    </div>
-    
-    <nav class="mobile-nav">
-        {{ partial "menu.html" . }}
-        <div class="mobile-social">
-            {{ range .Site.Params.social }}
-                {{ if . }}
-                    <a href="{{ . }}" target="_blank" rel="noopener">
-                        {{ $icon := index (split (index (split . "/") 2) ".") 0 }}
-                        {{ if eq $icon "github" }}
-                            <i class="fab fa-github"></i>
-                        {{ else if eq $icon "linkedin" }}
-                            <i class="fab fa-linkedin"></i>
-                        {{ else if eq $icon "twitter" }}
-                            <i class="fab fa-twitter"></i>
-                        {{ else if eq $icon "stackoverflow" }}
-                            <i class="fab fa-stack-overflow"></i>
-                        {{ else if eq $icon "youtube" }}
-                            <i class="fab fa-youtube"></i>
-                        {{ else if eq $icon "instagram" }}
-                            <i class="fab fa-instagram"></i>
-                        {{ else if hasPrefix . "mailto:" }}
-                            <i class="fas fa-envelope"></i>
-                        {{ else }}
-                            <i class="fas fa-link"></i>
-                        {{ end }}
-                    </a>
-                {{ end }}
-            {{ end }}
-        </div>
+<header id="banner">
+    <h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+    <nav>
+        <ul>
+            {{ range .Site.Menus.main.ByWeight -}}
+            <li>
+                {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
+            </li>
+            {{- end }}
+        </ul>
     </nav>
 </header>

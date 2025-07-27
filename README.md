@@ -1,68 +1,131 @@
-# Manikandaraj's Blog
 
-A Hugo-powered blog built with the Mango theme, deployed automatically to GitHub Pages.
+# Mango
+
+Mango is a clean, fast, and responsive Hugo theme designed for blogging and personal websites. It features a modern dark/light theme toggle, mobile-friendly navigation, and a focus on readability and performance.
+
+![Mango Theme Screenshot](https://raw.githubusercontent.com/manikandaraj/mango/main/images/screenshot.png)
 
 ## Features
 
-- **Dark Theme**: Modern dark-themed design
-- **Responsive**: Mobile-first responsive design
-- **GitHub Pages**: Automatic deployment via GitHub Actions
-- **Social Integration**: Links to social media profiles
-- **SEO Optimized**: Meta tags and structured data
-- **Fast Loading**: Optimized CSS and JavaScript
+* **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+* **Dark/Light Theme**: Automatic theme switching with manual toggle option
+* **Mobile Navigation**: Collapsible hamburger menu for mobile devices
+* **Fast Performance**: No external dependencies, minimal JavaScript
+* **SEO Optimized**: Clean markup and meta tags for better search engine visibility
+* **Social Links**: Integrated social media links (GitHub, LinkedIn, Twitter, Stack Overflow)
+* **Syntax Highlighting**: Beautiful code highlighting for technical blogs
+* **Clean Typography**: Readable fonts and proper spacing for better reading experience
 
-## Theme: Mango
+## Installation
 
-The Mango theme features:
-- Fixed header with navigation menu
-- Left sidebar with social links
-- Main content area with table of contents
-- Right sidebar for ads/additional content
-- Mobile-responsive hamburger menu
-- Reading progress indicator
-- Copy code buttons for code blocks
+### Git Submodule (Recommended)
 
-## Deployment
-
-This blog is automatically deployed to GitHub Pages using GitHub Actions. Simply push to the main branch and the site will be built and deployed automatically.
-
-### Local Development
-
-If you want to run this locally (optional):
+Add Mango as a submodule to your Hugo site:
 
 ```bash
-# Install Hugo
-# See: https://gohugo.io/installation/
-
-# Clone the repository
-git clone https://github.com/manikandaraj/myblog.git
-cd myblog
-
-# Run the development server
-hugo server -D
-
-# Build for production
-hugo --minify
+git submodule add https://github.com/manikandaraj/mango.git themes/mango
 ```
+
+### Manual Download
+
+1. Download the theme from the [releases page](https://github.com/manikandaraj/mango/releases)
+2. Extract to `themes/mango` in your Hugo site directory
 
 ## Configuration
 
-The site is configured via `hugo.toml`. Key settings include:
+Update your `config.toml` file:
 
-- Site title and author information
-- Social media links
-- Menu items
-- Theme settings
+```toml
+baseURL = 'https://yourdomain.com'
+languageCode = 'en-us'
+title = 'Your Site Title'
+theme = "mango"
 
-## Content Structure
+[params]
+copyright = "© 2024 Your Name. All rights reserved."
 
-- `/content/blog/` - Blog posts
-- `/content/about/` - About page
-- `/content/contact/` - Contact information
-- `/content/resume/` - Resume/CV
-- `/content/projects/` - Project portfolio
-- `/content/referrals/` - Referral links
+# Social Network Links
+[params.social]
+github = "https://github.com/yourusername"
+linkedin = "https://linkedin.com/in/yourusername"
+twitter = "https://x.com/yourusername"
+stackoverflow = "https://stackoverflow.com/users/youruser"
+
+# Theme Colors (Optional - defaults provided)
+[params.colors]
+accent_color = "#64ffda"
+# ... more color options available
+
+# Navigation Menu
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 2
+
+[[menu.main]]
+name = "Blog"
+url = "/posts"
+weight = 3
+```
+
+## Usage
+
+### Creating Content
+
+Create new blog posts:
+
+```bash
+hugo new posts/my-new-post.md
+```
+
+Create new pages:
+
+```bash
+hugo new about.md
+```
+
+### Running the Site
+
+Start the development server:
+
+```bash
+hugo server -D
+```
+
+Build for production:
+
+```bash
+hugo
+```
+
+## Customization
+
+The theme supports extensive customization through the `config.toml` file:
+
+- **Colors**: Customize theme colors for both dark and light modes
+- **Social Links**: Add your social media profiles
+- **Navigation**: Configure header menu items
+- **Advertisement**: Set custom banner sizes
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This blog content is licensed under [MIT License](LICENSE).
+This theme is released under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Support
+
+If you encounter any issues or have questions, please [open an issue](https://github.com/manikandaraj/mango/issues) on GitHub.
+
+## Author
+
+**Manikandaraj Srinivasan**
+- Website: [manikandaraj.com](https://manikandaraj.com)
+- GitHub: [@manikandaraj](https://github.com/manikandaraj)

@@ -1,11 +1,3 @@
-<footer class="footer">
-    <div class="footer-content">
-        <p>
-            {{ if .Site.Params.footerCopyright }}
-                {{ .Site.Params.footerCopyright | safeHTML }}
-            {{ else }}
-                © 2021–{{ now.Year }} {{ .Site.Params.author.name }}
-            {{ end }}
-        </p>
-    </div>
+<footer id="footer">
+    {{ .Site.Params.copyright }}
 </footer>
