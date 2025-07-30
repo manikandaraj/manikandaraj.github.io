@@ -1,5 +1,5 @@
 +++
-title = 'Git Submodules: An Overview'
+title = 'AWS Certified Data Engineer Associate Study Guide - Part 2'
 description = "Git submodules let you embed external repositories as dependencies within your project at specific commits, keeping their histories separate."
 summary = "Git submodules let you embed external repositories as dependencies within your project at specific commits, keeping their histories separate."
 date = '2025-03-16T00:39:40-04:00'
